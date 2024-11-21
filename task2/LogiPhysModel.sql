@@ -34,7 +34,7 @@ CREATE TABLE rentable_instruments (
  fee INT NOT NULL,
  brand VARCHAR(500) NOT NULL,
  quantity INT NOT NULL,
- name CHAR(10)
+ name VARCHAR(500)
 );
 
 ALTER TABLE rentable_instruments ADD CONSTRAINT PK_rentable_instruments PRIMARY KEY (id);
