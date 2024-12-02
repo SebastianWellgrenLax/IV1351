@@ -8,7 +8,8 @@ CREATE VIEW lessons_worked AS
 	JOIN lesson ON instructor.id=lesson.instructor_id
 	WHERE DATE_PART('month', lesson.time_slot)=DATE_PART('month',CURRENT_DATE) AND
 		DATE_PART('year', lesson.time_slot)=DATE_PART('year',CURRENT_DATE)
-	GROUP BY person.id, instructor.id;
+	GROUP BY person.id, instructor.id
+	ORDER BY "No of Lessons" DESC;
 
 
 
