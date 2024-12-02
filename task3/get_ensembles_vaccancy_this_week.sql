@@ -12,8 +12,17 @@ CREATE VIEW ensemble_vaccancies_next_week AS
 	JOIN group_lesson ON ensemble.id = group_lesson.id
 	JOIN lesson ON group_lesson.id = lesson.id
 	LEFT JOIN student_booking ON lesson.id = student_booking.lesson_id
-	WHERE DATE_PART('year', lesson.time_slot)=DATE_PART('year',CURRENT_DATE)
-		AND DATE_PART('week', lesson.time_slot)=DATE_PART('week',CURRENT_DATE)+1
+	WHERE 
+    	(
+        	-- Handle the last week of the year
+	        (DATE_PART('week', CURRENT_DATE + INTERVAL '1 week') = 1
+		AND DATE_PART('year', lesson.time_slot) = DATE_PART('year', CURRENT_DATE) + 1
+	        AND DATE_PART('week', lesson.time_slot) = 1)
+        OR
+	        -- Handle everything else
+	        (DATE_PART('year', lesson.time_slot) = DATE_PART('year', CURRENT_DATE)
+        	AND DATE_PART('week', lesson.time_slot) = DATE_PART('week', CURRENT_DATE) + 1)
+    	)
 	GROUP BY ensemble.id, group_lesson.maximum_participicants, lesson.time_slot;
 
 
