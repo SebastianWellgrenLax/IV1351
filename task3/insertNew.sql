@@ -132,13 +132,13 @@ INSERT INTO contact_person (student_id, role, first_name, last_name, phone_numbe
 
 -- Insert into lesson
 INSERT INTO lesson (skill_level_id, time_slot, address, instructor_id, price_table_id) VALUES
-(1, '2024-01-01 10:00:00', '143 Main St', 1, 7),
+(1, '2024-12-10 10:00:00', '143 Main St', 1, 7),
 (2, '2024-01-02 10:00:00', '456 Elmo St', 10, 5),
 (3, '2024-04-01 12:00:00', '143 Main St', 1, 3),
 (1, '2024-06-02 13:00:00', '456 Elmo St', 2, 4),
 (3, '2024-03-02 12:00:00', '143 Main St', 7, 10),
-(3, '2024-12-12 04:00:00', 'P.O. Box 741, 8938 Vulputate Avenue', 1, 7),
-(3, '2024-12-15 07:00:00', 'Ap #641-4517 Cum St.', 10, 5),
+(3, '2024-12-19 04:00:00', 'P.O. Box 741, 8938 Vulputate Avenue', 1, 7),
+(3, '2024-12-21 07:00:00', 'Ap #641-4517 Cum St.', 10, 5),
 (2, '2024-02-04 15:00:00', '552-6343 Nisi Ave', 1, 3),
 (2, '2024-03-17 21:00:00', 'Ap #672-3665 Tincidunt Rd.', 2, 4),
 (2, '2024-11-12 13:00:00', '5165 Congue Ave', 7, 10),
@@ -152,11 +152,15 @@ INSERT INTO lesson (skill_level_id, time_slot, address, instructor_id, price_tab
 INSERT INTO group_lesson (id, maximum_participicants, minimum_participicants) VALUES
 (1, 10, 3),
 (2, 8, 2),
-(4, 8, 2);
+(4, 8, 2),
+(6, 2, 1),
+(7, 10, 3);
 
 -- Insert into ensemble
 INSERT INTO ensemble (id, genre) VALUES
-(1, 'Classical');
+(1, 'Classical'),
+(6, 'Throat Sining'),
+(7, 'Phonk');
 
 -- Insert into lesson_instrument
 INSERT INTO lesson_instrument (instrument_type_id, lesson_id) VALUES
