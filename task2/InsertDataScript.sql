@@ -15,9 +15,9 @@ INSERT INTO discount (type, percent) VALUES
 ('Sibling Discount', 15.0);
 
 -- Insert into rule
-INSERT INTO rule (description, name) VALUES
-('No student can rent more than two instruments at a time.', 'Rent Policy'),
-('Rented instruments have a lease of up to 12 months.', 'Lease Maximum');
+INSERT INTO rule (description, name, value) VALUES
+('No student can rent more than two instruments at a time.', 'Rent Policy', 2),
+('Rented instruments have a lease of up to 12 months.', 'Lease Maximum', 12);
 
 -- Insert into price_table
 INSERT INTO price_table (lesson_type, price, skill_level_id, date_added) VALUES
